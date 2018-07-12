@@ -1,5 +1,5 @@
 {
-  "name": "youtube_viewer",
+  "name": "react_youtubeviewer",
   "version": "1.0.0",
   "description": "Search and view YouTube videos. Written with React.",
   "main": "index.js",

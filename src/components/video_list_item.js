@@ -6,7 +6,9 @@ const VideoListItem = ({ video, getVideo }) => {
   const onVideoClick = e => getVideo(video)
 
   return(
-    <li className="list-group-item mb-3" onClick={ onVideoClick }>
+    <button
+      className="list-group-item list-group-item-action mb-3" 
+      onClick={ onVideoClick }>
       <div className="video-list media">
         <img 
           src={imageUrl} 
@@ -18,7 +20,7 @@ const VideoListItem = ({ video, getVideo }) => {
         </div>
 
       </div>
-    </li>
+    </button>
   )
 }
 
