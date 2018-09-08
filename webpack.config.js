@@ -17,7 +17,7 @@ module.exports = {
   module: {
     loaders: [
       {
-        exclude: /(node_modules|index.html)/,
+        exclude: /(node_modules|index.html|scripts)/,
         loader: "babel",
         query: {
           presets: ["env", "react", "stage-1"]
