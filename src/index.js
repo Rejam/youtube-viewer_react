@@ -14,7 +14,7 @@ class App extends React.Component {
   };
 
   componentWillMount() {
-    YoutubeSearch({ key: API_KEY, term: "" }, videos =>
+    YoutubeSearch({ key: process.env.API_KEY, term: "" }, videos =>
       this.setState({ videos, selectedVideo: videos[0] })
     );
   }
@@ -22,7 +22,7 @@ class App extends React.Component {
   fetchVideos = () => {
     YoutubeSearch(
       {
-        key: API_KEY,
+        key: process.env.API_KEY,
         term: this.state.query
       },
       videos => this.setState({ videos })
