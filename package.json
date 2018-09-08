@@ -6,7 +6,7 @@
   "repository": "git@github.com:rejam/React_YouTubeViewer.git",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "deploy": "webpack -p"
+    "deploy": "node ./scripts/create-env.js && webpack -p"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +20,7 @@
     "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
+    "dotenv": "^6.0.0",
     "lodash": "^3.10.1",
     "react": "16.3.2",
     "react-dom": "16.3.2",
