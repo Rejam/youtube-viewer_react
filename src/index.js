@@ -37,13 +37,15 @@ class App extends React.Component {
   render() {
     const handleUesrInput = _.debounce(this.handleUesrInput, 300);
     return (
-      <div className="row">
-        <div className="container">
-          <h1 className="display-4">YouTube Viewer</h1>
-          <SearchBar getUserQuery={handleUesrInput} />
+      <div className="container">
+        <div className="row">
+          <div className="container">
+            <h1 className="display-4">YouTube Viewer</h1>
+            <SearchBar getUserQuery={handleUesrInput} />
+          </div>
+          <VideoDisplay video={this.state.selectedVideo} />
+          <VideoList videos={this.state.videos} getVideo={this.onVideoSelect} />
         </div>
-        <VideoDisplay video={this.state.selectedVideo} />
-        <VideoList videos={this.state.videos} getVideo={this.onVideoSelect} />
       </div>
     );
   }
