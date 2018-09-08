@@ -48,4 +48,4 @@ class App extends React.Component {
   }
 }
 
-render(<App />, document.querySelector(".container"));
+render(<App />, document.querySelector("#root"));
