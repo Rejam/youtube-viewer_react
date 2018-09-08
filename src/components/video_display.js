@@ -13,7 +13,7 @@ const VideoDisplay = ({ video }) => {
           className="embed-responsive-item" 
           src={ url } />
       </div>
-      <div className="details pt-3">
+      <div className="details pt-3" style="border: 1px solid #333">
         <div>{ video.snippet.title }</div>
         <div> { video.snippet.description }</div>
       </div>
