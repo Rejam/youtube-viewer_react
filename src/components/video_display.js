@@ -7,13 +7,13 @@ const VideoDisplay = ({ video }) => {
   const url = `https://www.youtube.com/embed/${videoId}`
 
   return(
-    <div className="col-md-8 pb-3">
+    <div className="col-md-8">
       <div className="embed-responsive embed-responsive-16by9">
         <iframe 
           className="embed-responsive-item" 
           src={ url } />
       </div>
-      <div className="details mt-3 p-3">
+      <div className="details pt-3">
         <div>{ video.snippet.title }</div>
         <div> { video.snippet.description }</div>
       </div>
