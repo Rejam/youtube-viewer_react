@@ -5,7 +5,6 @@ import YoutubeSearch from "youtube-api-search";
 import SearchBar from "./components/search_bar";
 import VideoDisplay from "./components/video_display";
 import VideoList from "./components/video_list";
-import API_KEY from "../config";
 
 class App extends React.Component {
   state = {
@@ -15,7 +14,7 @@ class App extends React.Component {
   };
 
   componentWillMount() {
-    YoutubeSearch({ key: API_KEY, term: "" }, videos =>
+    YoutubeSearch({ key: process.env.API_KEY, term: "" }, videos =>
       this.setState({ videos, selectedVideo: videos[0] })
     );
   }
@@ -23,7 +22,7 @@ class App extends React.Component {
   fetchVideos = () => {
     YoutubeSearch(
       {
-        key: API_KEY,
+        key: process.env.API_KEY,
         term: this.state.query
       },
       videos => this.setState({ videos })
