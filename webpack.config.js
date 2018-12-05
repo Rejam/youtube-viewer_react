@@ -1,42 +1,45 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const Dotenv = require("dotenv-webpack");
+const Dotenv = require('dotenv-webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const Visualizer = require('webpack-visualizer-plugin');
+
 
 module.exports = {
-  entry: ["./src/index.js"],
+  entry: ['./src/index.js'],
   output: {
-    path: __dirname + "/build",
-    publicPath: "/",
-    filename: "bundle.js"
+    path: __dirname + '/build',
+    filename: 'bundle.js'
   },
+  mode: 'production',
   plugins: [
     new HtmlWebpackPlugin({
       template: "index.html"
     }),
-    new Dotenv()
+    new Dotenv(),
+    new Visualizer()
   ],
   module: {
-    loaders: [
+    rules: [
       {
-        exclude: /(node_modules|index.html|scripts)/,
-        loader: "babel",
-        query: {
-          presets: ["env", "react", "stage-1"]
+        test: /\.m?js$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
         }
       }
     ]
   },
   resolve: {
-    extensions: ["", ".js", ".jsx"]
+    extensions: ['.js', '.jsx']
   },
   devServer: {
     historyApiFallback: true,
-    contentBase: "./",
+    contentBase: './dist',
     watchOptions: {
       aggregateTimeout: 300,
       poll: 1000
     }
-  },
-  node: {
-    fs: "empty"
   }
-};
+}

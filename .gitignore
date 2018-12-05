@@ -2,9 +2,5 @@
 npm-debug.log
 .DS_Store
 
-# IntelliJ
-*.iml
-/.idea
-
 .env
 /build
